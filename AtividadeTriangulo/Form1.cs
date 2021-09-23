@@ -25,6 +25,10 @@ namespace AtividadeTriangulo
             {
                 lblResposta.Text = controle.Mensagem;
             }
+            else
+            {
+                lblResposta.Text = controle.Resposta;
+            }
         }
     }
 }

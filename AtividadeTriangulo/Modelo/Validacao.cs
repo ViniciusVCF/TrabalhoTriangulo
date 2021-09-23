@@ -10,21 +10,26 @@ namespace AtividadeTriangulo.Modelo
     {
         public Validacao(string lado1, string lado2, string lado3) : base(lado1, lado2, lado3)
         {
-            verificar(lado1, lado2, lado3);
+            if (!verificar(lado1, lado2, lado3))
+            {
+                this.mensagem = "Dados inseridos são inválidos!";
+            }
+            else
+            {
+                this.mensagem = "";
+            }
         }
         private bool verificar(string lado1, string lado2, string lado3)
         {
-            double l1, l2, l3;
             try
             {
-                l1 = double.Parse(lado1);
-                l2 = double.Parse(lado2);
-                l3 = double.Parse(lado3);
+                this.l1 = double.Parse(lado1);
+                this.l2 = double.Parse(lado2);
+                this.l3 = double.Parse(lado3);
                 return true;
             }
             catch (Exception)
             {
-                this.Mensagem = "Informe um dado válido!";
                 return false;
             }
         }
